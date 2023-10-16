@@ -3,7 +3,7 @@ def AddZeros(num,s):
         for i in range (l): 
             s="0"+s
         return s
-class volts:
+class DAC:
     def __init__(self,volt=0.0,max_volts=0,bit_num=0):
         self.volt=volt
         self.max_volts=max_volts
@@ -20,7 +20,7 @@ class volts:
               
         
 
-volt=volts(1.9,5,10)
-print(volt.ToDigital())
-volt.SetDigitalValue("1010101010")
-print(volt.volt)
+DAC=volts(1.9,5,10)
+print(DAC.ToDigital())
+DAC.SetDigitalValue("1010101010")
+print(DAC.volt)
