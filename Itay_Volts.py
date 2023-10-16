@@ -21,4 +21,4 @@ class DAC:
 DAC=DAC(2)
 print(DAC.ToDigital())
 DAC.SetDigitalValue("1001111010")
-print(volt.volt)
+print(DAC.volt)
