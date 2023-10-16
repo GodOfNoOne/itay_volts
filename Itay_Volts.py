@@ -20,7 +20,7 @@ class DAC:
               
         
 
-DAC=volts(1.9,5,10)
+DAC=DAC(1.9,5,10)
 print(DAC.ToDigital())
 DAC.SetDigitalValue("1010101010")
 print(DAC.volt)
