@@ -12,7 +12,7 @@ class DAC:
         if self.volt>self.max_volts or self.volt <0:
             return ("volts out of range")
         num_of_bits = int((self.volt/self.max_volts)*(2**self.bit_num-1))
-        return(AddZeros(self.max_volts,str(bin(num_of_bits)[2:])))
+        return(AddZeros(self.bit_num,str(bin(num_of_bits)[2:])))
     def SetDigitalValue(self,value):
          if (len(value)==self.bit_num):
               bits=int(value,2)
@@ -20,7 +20,7 @@ class DAC:
               
         
 
-DAC=DAC(1.9,5,10)
+DAC=DAC(2.5,5,10)
 print(DAC.ToDigital())
-DAC.SetDigitalValue("1010101010")
+DAC.SetDigitalValue("1000111011")
 print(DAC.volt)
