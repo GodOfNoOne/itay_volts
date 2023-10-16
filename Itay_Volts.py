@@ -11,16 +11,16 @@ class volts:
     def ToDigital(self):
         if self.volt>self.max_volts or self.volt <0:
             return ("volts out of range")
-        num_of_bits = int((self.volt/self.max_volts)*1023)
+        num_of_bits = int((self.volt/self.max_volts)*(2**self.bit_num-1))
         return(AddZeros(self.max_volts,str(bin(num_of_bits)[2:])))
     def SetDigitalValue(self,value):
          if (len(value)==self.bit_num):
               bits=int(value,2)
-              self.volt=round(self.max_volts*(bits/1023),2)
+              self.volt=round(self.max_volts*(bits/(2**self.bit_num-1)),2)
               
         
 
-volt=volts(10,10,10)
+volt=volts(1.9,5,10)
 print(volt.ToDigital())
-volt.SetDigitalValue("1000111011")
+volt.SetDigitalValue("1010101010")
 print(volt.volt)
